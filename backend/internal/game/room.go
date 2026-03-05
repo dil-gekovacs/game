@@ -33,7 +33,7 @@ const (
 	EnemyContactDamage       uint8  = 10
 	EnemyAttackCooldownTicks uint8  = 30
 	EnemyMeleeRange                 = 16.0
-	EnemyRespawnTicks        uint16 = 150
+	EnemyRespawnTicks        uint16 = 450 // 15 seconds at 30Hz
 
 	PlayerStateDead      uint8  = 5
 	PlayerStateAttacking uint8  = 2
@@ -502,11 +502,16 @@ func inPrimaryAttackArc(player *Player, enemy *Enemy) bool {
 	if distSq > PrimaryAttackRange*PrimaryAttackRange {
 		return false
 	}
-	if distSq < 0.0001 {
-		return true // enemy is on top of player
+
+	// Enemies within melee touch range are always hittable regardless of aim direction.
+	// This prevents the frustrating case where an enemy is touching you but your
+	// aim cone points slightly away.
+	meleeContactRange := (EnemyRadius + PlayerRadius) * 1.5
+	if distSq < meleeContactRange*meleeContactRange {
+		return true
 	}
 
-	// Use aim angle from latest input for continuous-direction attack
+	// Beyond contact range, use aim-direction cone check
 	aimAngle := player.LatestInput.AimAngle
 	aimDirX := math.Cos(aimAngle)
 	aimDirY := math.Sin(aimAngle)
@@ -515,7 +520,6 @@ func inPrimaryAttackArc(player *Player, enemy *Enemy) bool {
 	toEnemyX := dx / dist
 	toEnemyY := dy / dist
 
-	// Dot product gives cosine of angle between aim direction and enemy direction
 	dotProduct := aimDirX*toEnemyX + aimDirY*toEnemyY
 	return dotProduct >= math.Cos(PrimaryAttackConeHalfAngle)
 }

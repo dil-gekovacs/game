@@ -140,7 +140,8 @@ const startGame = async () => {
       `entity: ${localEntityId ?? "pending"}`,
       `connection: ${connectionState}`,
       `enemies: ${getEnemyCount()}`,
-      "tip: ?roomId=<id>&playerId=<id>",
+      "",
+      "WASD: move | Click/Space: attack",
     ].join("\n");
   };
 
