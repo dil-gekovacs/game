@@ -5,7 +5,7 @@ import type { Container } from "pixi.js";
 // Constants
 // ---------------------------------------------------------------------------
 
-const TILESET_PATH = "assets/sprites/pixellab/tilesets/dungeon_v2.png";
+const TILESET_PATH = "assets/sprites/pixellab/tilesets/prison_ashlar.png";
 const TILE_SIZE = 16;
 
 /**

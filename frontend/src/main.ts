@@ -74,7 +74,7 @@ const startGame = async () => {
   app.stage.addChild(worldContainer);
 
   const spriteAssets = await loadSpriteAssets();
-  const mapData = await loadMap("/assets/maps/dungeon-large.json");
+  const mapData = await loadMap("/assets/maps/prison-labyrinth.json");
   const mapMetrics = await renderRoom(worldContainer, mapData);
 
   const entityStore = createEntityStore();

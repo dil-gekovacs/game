@@ -166,7 +166,7 @@ func NewRoom(id string) *Room {
 
 	r := &Room{
 		id:           id,
-		mapID:        "dungeon-large",
+		mapID:        "prison-labyrinth",
 		players:      make(map[uint16]*Player, MaxPlayers),
 		enemies:      make(map[uint16]*Enemy),
 		worldWidth:   runtimeMap.WidthPx,
@@ -948,8 +948,8 @@ func loadStarterRoomRuntime() (mapRuntime, bool) {
 	if mapDir == "" {
 		// Try relative to working directory (works with `go run` from backend/)
 		candidates := []string{
-			"../assets/maps/dungeon-large.json",
-			"assets/maps/dungeon-large.json",
+			"../assets/maps/prison-labyrinth.json",
+			"assets/maps/prison-labyrinth.json",
 		}
 		for _, candidate := range candidates {
 			if _, err := os.Stat(candidate); err == nil {
@@ -961,14 +961,14 @@ func loadStarterRoomRuntime() (mapRuntime, bool) {
 
 	var mapPath string
 	if mapDir != "" {
-		mapPath = filepath.Join(mapDir, "dungeon-large.json")
+		mapPath = filepath.Join(mapDir, "prison-labyrinth.json")
 	} else {
 		// Last resort: runtime.Caller-based path (works when running compiled binary from project root)
 		_, currentFile, _, ok := runtime.Caller(0)
 		if !ok {
 			return mapRuntime{}, false
 		}
-		mapPath = filepath.Clean(filepath.Join(filepath.Dir(currentFile), "../../../assets/maps/dungeon-large.json"))
+		mapPath = filepath.Clean(filepath.Join(filepath.Dir(currentFile), "../../../assets/maps/prison-labyrinth.json"))
 	}
 	data, err := os.ReadFile(mapPath)
 	if err != nil {

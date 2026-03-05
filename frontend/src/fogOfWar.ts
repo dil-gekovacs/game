@@ -10,11 +10,16 @@ type FogOfWar = {
 const FADE_DURATION_MS = 300;
 
 const ROOMS: RoomDef[] = [
-  { x: 16, y: 16, width: 112, height: 288 },   // Room 1 "Entrance"
-  { x: 128, y: 112, width: 64, height: 80 },    // Room 2 "Corridor"
-  { x: 192, y: 16, width: 192, height: 288 },   // Room 3 "Chamber"
-  { x: 384, y: 16, width: 112, height: 128 },   // Room 4 "North Side"
-  { x: 384, y: 176, width: 112, height: 128 },   // Room 5 "South Side"
+  { x: 16, y: 16, width: 144, height: 112 },    // Entry Guardroom
+  { x: 16, y: 144, width: 208, height: 80 },     // North Cell Block
+  { x: 16, y: 224, width: 224, height: 64 },     // Central Corridor (west)
+  { x: 16, y: 288, width: 208, height: 80 },     // South Cell Block
+  { x: 240, y: 144, width: 176, height: 224 },   // Interrogation Chamber
+  { x: 416, y: 144, width: 208, height: 128 },   // Warden's Office
+  { x: 416, y: 288, width: 208, height: 80 },    // Escape Tunnel (upper)
+  { x: 240, y: 368, width: 256, height: 48 },    // Escape Tunnel (lower passage)
+  { x: 496, y: 384, width: 128, height: 80 },    // Oubliette
+  { x: 16, y: 368, width: 208, height: 96 },     // South Dead End
 ];
 
 type FadingRoom = {
