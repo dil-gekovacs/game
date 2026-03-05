@@ -70,7 +70,11 @@ func (h *Handler) getOrCreateRoom(roomID string) *game.Room {
 	defer h.roomsMu.Unlock()
 
 	if room, ok := h.rooms[roomID]; ok {
-		return room
+		if !room.IsStopped() {
+			return room
+		}
+		// Room was stopped (all players left). Remove it and create a fresh one.
+		delete(h.rooms, roomID)
 	}
 
 	room := game.NewRoom(roomID)

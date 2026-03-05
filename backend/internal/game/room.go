@@ -297,6 +297,15 @@ func (r *Room) Stop() {
 	})
 }
 
+func (r *Room) IsStopped() bool {
+	select {
+	case <-r.stopCh:
+		return true
+	default:
+		return false
+	}
+}
+
 func (r *Room) run() {
 	simTicker := time.NewTicker(33 * time.Millisecond)
 	snapTicker := time.NewTicker(50 * time.Millisecond)
@@ -372,6 +381,10 @@ func (r *Room) simulateTick() {
 					nextX += pushX
 					nextY += pushY
 				}
+			}
+
+			if r.collidesCircleLocked(nextX, nextY, PlayerRadius) {
+				nextX, nextY, collidedX, collidedY = r.moveWithCollisionLocked(player.X, player.Y, vx*SimDeltaSec, vy*SimDeltaSec, PlayerRadius)
 			}
 
 			player.X = nextX
@@ -597,6 +610,12 @@ func (r *Room) simulateEnemiesLocked(events *[]protocol.EventMsg) {
 				nextX += pushX
 				nextY += pushY
 			}
+		}
+
+		// Re-check wall collision after separation pushes
+		if r.collidesCircleLocked(nextX, nextY, EnemyRadius) {
+			// Separation pushed us into a wall — revert to pre-separation position
+			nextX, nextY, _, _ = r.moveWithCollisionLocked(enemy.X, enemy.Y, vx*SimDeltaSec, vy*SimDeltaSec, EnemyRadius)
 		}
 
 		enemy.X = nextX
@@ -900,11 +919,33 @@ type tiledProperty struct {
 }
 
 func loadStarterRoomRuntime() (mapRuntime, bool) {
-	_, currentFile, _, ok := runtime.Caller(0)
-	if !ok {
-		return mapRuntime{}, false
+	// Try MAP_DIR env var first (for Docker), then working directory, then runtime.Caller fallback
+	mapDir := os.Getenv("MAP_DIR")
+	if mapDir == "" {
+		// Try relative to working directory (works with `go run` from backend/)
+		candidates := []string{
+			"../assets/maps/dungeon-large.json",
+			"assets/maps/dungeon-large.json",
+		}
+		for _, candidate := range candidates {
+			if _, err := os.Stat(candidate); err == nil {
+				mapDir = filepath.Dir(candidate)
+				break
+			}
+		}
 	}
-	mapPath := filepath.Clean(filepath.Join(filepath.Dir(currentFile), "../../../assets/maps/dungeon-large.json"))
+
+	var mapPath string
+	if mapDir != "" {
+		mapPath = filepath.Join(mapDir, "dungeon-large.json")
+	} else {
+		// Last resort: runtime.Caller-based path (works when running compiled binary from project root)
+		_, currentFile, _, ok := runtime.Caller(0)
+		if !ok {
+			return mapRuntime{}, false
+		}
+		mapPath = filepath.Clean(filepath.Join(filepath.Dir(currentFile), "../../../assets/maps/dungeon-large.json"))
+	}
 	data, err := os.ReadFile(mapPath)
 	if err != nil {
 		return mapRuntime{}, false

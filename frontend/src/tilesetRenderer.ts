@@ -5,7 +5,7 @@ import type { Container } from "pixi.js";
 // Constants
 // ---------------------------------------------------------------------------
 
-const TILESET_PATH = "assets/sprites/pixellab/tilesets/fantasy_walls.png";
+const TILESET_PATH = "assets/sprites/pixellab/tilesets/dungeon_v2.png";
 const TILE_SIZE = 16;
 
 /**
@@ -16,7 +16,7 @@ const LOWER = 0;
 const UPPER = 1;
 
 /**
- * Wang tile definitions extracted from the fantasy_walls_metadata.json.
+ * Wang tile definitions extracted from the dungeon_v2_metadata.json.
  * Each entry maps a Wang index to its bounding box in the atlas and its
  * corner configuration encoded as { NW, NE, SW, SE } using 0=lower, 1=upper.
  */

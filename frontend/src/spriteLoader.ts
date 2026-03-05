@@ -36,6 +36,7 @@ const CHARACTER_ANIMATIONS: Record<string, ReadonlyArray<AnimationManifestEntry>
     { name: "breathing-idle", directions: DIRECTIONS, frameCount: 4 },
     { name: "walking-4-frames", directions: DIRECTIONS, frameCount: 4 },
     { name: "lead-jab", directions: DIRECTIONS, frameCount: 3 },
+    { name: "cross-punch", directions: DIRECTIONS, frameCount: 6 },
   ],
   grunt_melee: [
     { name: "breathing-idle", directions: ["south", "north", "east"], frameCount: 4 },

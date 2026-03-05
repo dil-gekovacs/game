@@ -20,10 +20,8 @@ const ARCHETYPE_TANK = 2;
 
 const IDLE_FRAME_DURATION_MS = 200;
 const WALK_FRAME_DURATION_MS = 150;
-const ATTACK_FRAME_DURATION_MS = 120;
 const IDLE_FRAME_COUNT = 4;
 const WALK_FRAME_COUNT = 4;
-const ATTACK_FRAME_COUNT = 3;
 
 // ---------------------------------------------------------------------------
 // Types
@@ -119,9 +117,9 @@ const KNIGHT_ANIMATIONS: Partial<Record<EntityState, AnimationDef>> = {
     loop: true,
   },
   [State.Attacking]: {
-    animationName: "lead-jab",
-    frameCount: ATTACK_FRAME_COUNT,
-    frameDurationMs: ATTACK_FRAME_DURATION_MS,
+    animationName: "cross-punch",
+    frameCount: 6,
+    frameDurationMs: 100,
     loop: false,
   },
 };
