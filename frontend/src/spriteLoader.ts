@@ -49,8 +49,9 @@ const CHARACTER_ANIMATIONS: Record<string, ReadonlyArray<AnimationManifestEntry>
     { name: "breathing-idle", directions: DIRECTIONS, frameCount: 4 },
     { name: "walking-4-frames", directions: DIRECTIONS, frameCount: 4 },
     { name: "lead-jab", directions: DIRECTIONS, frameCount: 3 },
-    { name: "taking-punch", directions: ["south", "north", "west"], frameCount: 6 },
-    { name: "falling-back-death", directions: ["south"], frameCount: 7 },
+    { name: "taking-punch", directions: DIRECTIONS, frameCount: 6 },
+    { name: "falling-back-death", directions: DIRECTIONS, frameCount: 7 },
+    { name: "cross-punch", directions: DIRECTIONS, frameCount: 6 },
   ],
   cleric: [
     { name: "breathing-idle", directions: DIRECTIONS, frameCount: 4 },

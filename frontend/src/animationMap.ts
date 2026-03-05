@@ -55,7 +55,7 @@ export function getFacingDirection(facing: Facing): string {
 
 const ENTITY_TYPE_TO_CHARACTER: Record<EntityType, string> = {
   [EType.Player]: "knight",
-  [EType.Enemy]: "grunt_melee",
+  [EType.Enemy]: "skeleton",
   [EType.Projectile]: "knight",
   [EType.Item]: "knight",
 };
@@ -68,9 +68,9 @@ const CHARACTER_CLASS_TO_NAME: Record<number, string> = {
 };
 
 const ENEMY_ARCHETYPE_TO_CHARACTER: Record<number, string> = {
-  [ARCHETYPE_STANDARD]: "grunt_melee",
+  [ARCHETYPE_STANDARD]: "skeleton",
   [ARCHETYPE_FAST]: "skeleton",
-  [ARCHETYPE_TANK]: "elite_brute",
+  [ARCHETYPE_TANK]: "skeleton",
 };
 
 export function getCharacterName(
