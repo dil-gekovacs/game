@@ -4,6 +4,7 @@ import { EntityState, EntityType, EventType } from "../../shared/types/entities"
 import type { ClientMessage, ServerMessage } from "../../shared/protocol/messages";
 import { createCamera } from "./camera";
 import { createEntityRenderer } from "./entityRenderer";
+import { createFogOfWar } from "./fogOfWar";
 import { createEntityStore } from "./entityStore";
 import { createGameLoop } from "./gameLoop";
 import { createGameOverScreen } from "./gameOverScreen";
@@ -83,6 +84,7 @@ const startGame = async () => {
     worldWidth: mapMetrics.worldWidth,
   });
   const entityRenderer = createEntityRenderer(worldContainer, entityStore, spriteAssets);
+  const fogOfWar = createFogOfWar(worldContainer);
   const inputController = createInputController(app.canvas);
   const hudElement = document.createElement("div");
   hudElement.dataset.testid = "hud";
@@ -260,6 +262,7 @@ const startGame = async () => {
       const localEntity = entityStore.getLocalEntity();
       if (localEntity) {
         camera.update(localEntity.predictedX, localEntity.predictedY);
+        fogOfWar.update(localEntity.predictedX, localEntity.predictedY);
       }
 
       camera.applyToContainer(worldContainer, app.screen.width, app.screen.height, shakeOffset);
@@ -301,6 +304,7 @@ const startGame = async () => {
   window.addEventListener("beforeunload", () => {
     gameLoop.stop();
     entityRenderer.destroy();
+    fogOfWar.destroy();
     inputController.destroy();
     wsClient.close();
     gameOverScreen.destroy();

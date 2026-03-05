@@ -26,8 +26,9 @@ const (
 	EnemyAggroRng = 120.0
 
 	PrimaryAttackCooldownTicks          = 12
-	PrimaryAttackRange                  = 40.0
-	PrimaryAttackConeHalfAngle          = math.Pi / 4 // 45 degrees each side = 90 degree cone
+	HitboxHalfWidth                     = 24.0 // 3 tiles (48px) wide, centered on player
+	HitboxDepth                         = 24.0 // 1.5 tiles forward from player center
+	HitboxBackTolerance                 = 4.0  // small tolerance behind player for side hits
 	PrimaryAttackDamage          uint8  = 50
 
 	EnemyContactDamage       uint8  = 10
@@ -454,6 +455,14 @@ func (r *Room) simulateTick() {
 }
 
 func (r *Room) applyPrimaryAttackLocked(player *Player, events *[]protocol.EventMsg) {
+	// Update facing from aim direction so the hitbox matches where the player is aiming
+	aim := player.LatestInput.AimAngle
+	aimX := math.Cos(aim)
+	aimY := math.Sin(aim)
+	if aimX != 0 || aimY != 0 {
+		updateFacingFromVector(&player.Facing, aimX, aimY)
+	}
+
 	for _, enemy := range r.enemies {
 		if enemy.Dead {
 			continue
@@ -498,30 +507,23 @@ func (r *Room) applyPrimaryAttackLocked(player *Player, events *[]protocol.Event
 func inPrimaryAttackArc(player *Player, enemy *Enemy) bool {
 	dx := enemy.X - player.X
 	dy := enemy.Y - player.Y
-	distSq := dx*dx + dy*dy
-	if distSq > PrimaryAttackRange*PrimaryAttackRange {
+
+	// Rectangular hitbox based on player facing direction.
+	// Width: 48px (3 tiles) centered on player = 24px each side.
+	// Depth: 24px (1.5 tiles) extending forward only.
+	// A small back tolerance (4px) allows hitting enemies barely at the side.
+	switch player.Facing {
+	case 0: // Down: forward is +Y
+		return dy >= -HitboxBackTolerance && dy <= HitboxDepth && math.Abs(dx) <= HitboxHalfWidth
+	case 1: // Up: forward is -Y
+		return dy <= HitboxBackTolerance && dy >= -HitboxDepth && math.Abs(dx) <= HitboxHalfWidth
+	case 2: // Left: forward is -X
+		return dx <= HitboxBackTolerance && dx >= -HitboxDepth && math.Abs(dy) <= HitboxHalfWidth
+	case 3: // Right: forward is +X
+		return dx >= -HitboxBackTolerance && dx <= HitboxDepth && math.Abs(dy) <= HitboxHalfWidth
+	default:
 		return false
 	}
-
-	// Enemies within melee touch range are always hittable regardless of aim direction.
-	// This prevents the frustrating case where an enemy is touching you but your
-	// aim cone points slightly away.
-	meleeContactRange := (EnemyRadius + PlayerRadius) * 1.5
-	if distSq < meleeContactRange*meleeContactRange {
-		return true
-	}
-
-	// Beyond contact range, use aim-direction cone check
-	aimAngle := player.LatestInput.AimAngle
-	aimDirX := math.Cos(aimAngle)
-	aimDirY := math.Sin(aimAngle)
-
-	dist := math.Sqrt(distSq)
-	toEnemyX := dx / dist
-	toEnemyY := dy / dist
-
-	dotProduct := aimDirX*toEnemyX + aimDirY*toEnemyY
-	return dotProduct >= math.Cos(PrimaryAttackConeHalfAngle)
 }
 
 func (r *Room) simulateEnemiesLocked(events *[]protocol.EventMsg) {
