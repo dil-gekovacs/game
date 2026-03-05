@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "tiled_conventions": {
+    "layers": {
+      "Ground": {"type":"tilelayer","purpose":"visual","required": true},
+      "Collision": {"type":"objectgroup","purpose":"collision","object_property":"collidable","notes":"Objects are rectangles marking impassable areas"},
+      "Spawns": {"type":"objectgroup","purpose":"spawns","object_property":"spawn_type","allowed":["player","enemy","npc","item"],"required_spawn":"player"}
+    },
+    "spawn_object_schema": {
+      "properties": {
+        "spawn_type": {"type":"string"},
+        "id": {"type":"string"},
+        "facing": {"type":"string","enum":["up","down","left","right"]}
+      }
+    }
+  }
+}

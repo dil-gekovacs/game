@@ -1,0 +1,9 @@
+{
+  "input_dir": "assets/sprites/export",
+  "output_image": "assets/sprites/atlas.png",
+  "output_meta": "assets/sprites/atlas.json",
+  "max_width": 2048,
+  "padding": 2,
+  "extrude": 0,
+  "background": [0,0,0,0]
+}

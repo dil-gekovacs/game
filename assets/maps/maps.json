@@ -1,0 +1,19 @@
+{
+  "maps": [
+    {
+      "id": "starter-room",
+      "file": "starter-room.json",
+      "default_spawn": "player_spawn"
+    },
+    {
+      "id": "room-r0-entry",
+      "file": "room-r0-entry.json",
+      "default_spawn": "player_spawn_1"
+    },
+    {
+      "id": "room-r1-fork",
+      "file": "room-r1-fork.json",
+      "default_spawn": "player_spawn_west"
+    }
+  ]
+}

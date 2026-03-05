@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "export_naming": {
+    "template": "{entity}/{animation}/{entity}_{animation}_{frame}.png",
+    "entity_case": "lower_snake_case",
+    "animation_case": "lower_snake_case",
+    "frame_format": "zero_padded_2"
+  },
+  "palette": {
+    "max_active_colors": 32,
+    "sprite_colors_per_frame": "3-4 + optional accent",
+    "ramps": ["neutral", "warm", "cool", "nature", "damage"]
+  },
+  "atlas_groups": [
+    "players_knight",
+    "players_cleric",
+    "players_mage",
+    "players_ranger",
+    "enemies_grunt",
+    "enemies_ranged",
+    "enemies_elite",
+    "enemies_caster",
+    "projectiles",
+    "fx_combat"
+  ],
+  "classes": {
+    "knight": ["idle", "move", "primary_windup", "primary_attack", "primary_recover", "parry_start", "parry_window", "parry_success", "hurt", "death"],
+    "cleric": ["idle", "move", "heal_cast_start", "heal_cast_loop", "heal_cast_release", "ward_raise", "hurt", "death"],
+    "mage": ["idle", "move", "cast_start", "cast_loop", "cast_release", "blink", "hurt", "death"],
+    "ranger": ["idle", "move", "aim", "shoot", "net_throw", "roll", "hurt", "death"]
+  },
+  "enemy_baseline": ["idle", "move", "attack_windup", "attack_active", "attack_recover", "hurt", "death"]
+}

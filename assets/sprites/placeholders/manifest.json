@@ -1,0 +1,1161 @@
+{
+  "version": 1,
+  "source": "/Users/gekovacs/Downloads/20260305_1119_Image Generation_simple_compose_01kjyr2zxcf96bemx2ywaagp3h.png",
+  "frame_size": 64,
+  "grid_size": 64,
+  "frames_per_animation": 2,
+  "files": [
+    {
+      "path": "knight/idle/knight_idle_00.png",
+      "source_rect": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/idle/knight_idle_01.png",
+      "source_rect": [
+        64,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/move/knight_move_00.png",
+      "source_rect": [
+        128,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/move/knight_move_01.png",
+      "source_rect": [
+        192,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_windup/knight_primary_windup_00.png",
+      "source_rect": [
+        256,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_windup/knight_primary_windup_01.png",
+      "source_rect": [
+        320,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_attack/knight_primary_attack_00.png",
+      "source_rect": [
+        384,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_attack/knight_primary_attack_01.png",
+      "source_rect": [
+        448,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_recover/knight_primary_recover_00.png",
+      "source_rect": [
+        512,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/primary_recover/knight_primary_recover_01.png",
+      "source_rect": [
+        576,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_start/knight_parry_start_00.png",
+      "source_rect": [
+        640,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_start/knight_parry_start_01.png",
+      "source_rect": [
+        704,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_window/knight_parry_window_00.png",
+      "source_rect": [
+        768,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_window/knight_parry_window_01.png",
+      "source_rect": [
+        832,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_success/knight_parry_success_00.png",
+      "source_rect": [
+        896,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/parry_success/knight_parry_success_01.png",
+      "source_rect": [
+        0,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/hurt/knight_hurt_00.png",
+      "source_rect": [
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/hurt/knight_hurt_01.png",
+      "source_rect": [
+        128,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/death/knight_death_00.png",
+      "source_rect": [
+        192,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "knight/death/knight_death_01.png",
+      "source_rect": [
+        256,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/idle/cleric_idle_00.png",
+      "source_rect": [
+        320,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/idle/cleric_idle_01.png",
+      "source_rect": [
+        384,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/move/cleric_move_00.png",
+      "source_rect": [
+        448,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/move/cleric_move_01.png",
+      "source_rect": [
+        512,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_start/cleric_heal_cast_start_00.png",
+      "source_rect": [
+        576,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_start/cleric_heal_cast_start_01.png",
+      "source_rect": [
+        640,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_loop/cleric_heal_cast_loop_00.png",
+      "source_rect": [
+        704,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_loop/cleric_heal_cast_loop_01.png",
+      "source_rect": [
+        768,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_release/cleric_heal_cast_release_00.png",
+      "source_rect": [
+        832,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/heal_cast_release/cleric_heal_cast_release_01.png",
+      "source_rect": [
+        896,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/ward_raise/cleric_ward_raise_00.png",
+      "source_rect": [
+        960,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/ward_raise/cleric_ward_raise_01.png",
+      "source_rect": [
+        0,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/hurt/cleric_hurt_00.png",
+      "source_rect": [
+        64,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/hurt/cleric_hurt_01.png",
+      "source_rect": [
+        128,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/death/cleric_death_00.png",
+      "source_rect": [
+        192,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "cleric/death/cleric_death_01.png",
+      "source_rect": [
+        256,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/idle/mage_idle_00.png",
+      "source_rect": [
+        320,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/idle/mage_idle_01.png",
+      "source_rect": [
+        384,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/move/mage_move_00.png",
+      "source_rect": [
+        448,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/move/mage_move_01.png",
+      "source_rect": [
+        512,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_start/mage_cast_start_00.png",
+      "source_rect": [
+        576,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_start/mage_cast_start_01.png",
+      "source_rect": [
+        640,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_loop/mage_cast_loop_00.png",
+      "source_rect": [
+        704,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_loop/mage_cast_loop_01.png",
+      "source_rect": [
+        768,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_release/mage_cast_release_00.png",
+      "source_rect": [
+        832,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/cast_release/mage_cast_release_01.png",
+      "source_rect": [
+        896,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/blink/mage_blink_00.png",
+      "source_rect": [
+        960,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/blink/mage_blink_01.png",
+      "source_rect": [
+        0,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/hurt/mage_hurt_00.png",
+      "source_rect": [
+        64,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/hurt/mage_hurt_01.png",
+      "source_rect": [
+        128,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/death/mage_death_00.png",
+      "source_rect": [
+        192,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "mage/death/mage_death_01.png",
+      "source_rect": [
+        256,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/idle/ranger_idle_00.png",
+      "source_rect": [
+        320,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/idle/ranger_idle_01.png",
+      "source_rect": [
+        384,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/move/ranger_move_00.png",
+      "source_rect": [
+        448,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/move/ranger_move_01.png",
+      "source_rect": [
+        512,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/aim/ranger_aim_00.png",
+      "source_rect": [
+        576,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/aim/ranger_aim_01.png",
+      "source_rect": [
+        640,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/shoot/ranger_shoot_00.png",
+      "source_rect": [
+        704,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/shoot/ranger_shoot_01.png",
+      "source_rect": [
+        768,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/net_throw/ranger_net_throw_00.png",
+      "source_rect": [
+        832,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/net_throw/ranger_net_throw_01.png",
+      "source_rect": [
+        896,
+        192,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/roll/ranger_roll_00.png",
+      "source_rect": [
+        0,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/roll/ranger_roll_01.png",
+      "source_rect": [
+        64,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/hurt/ranger_hurt_00.png",
+      "source_rect": [
+        128,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/hurt/ranger_hurt_01.png",
+      "source_rect": [
+        192,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/death/ranger_death_00.png",
+      "source_rect": [
+        256,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "ranger/death/ranger_death_01.png",
+      "source_rect": [
+        320,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/idle/enemy_grunt_idle_00.png",
+      "source_rect": [
+        384,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/idle/enemy_grunt_idle_01.png",
+      "source_rect": [
+        448,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/move/enemy_grunt_move_00.png",
+      "source_rect": [
+        512,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/move/enemy_grunt_move_01.png",
+      "source_rect": [
+        576,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_windup/enemy_grunt_attack_windup_00.png",
+      "source_rect": [
+        640,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_windup/enemy_grunt_attack_windup_01.png",
+      "source_rect": [
+        704,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_active/enemy_grunt_attack_active_00.png",
+      "source_rect": [
+        768,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_active/enemy_grunt_attack_active_01.png",
+      "source_rect": [
+        832,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_recover/enemy_grunt_attack_recover_00.png",
+      "source_rect": [
+        896,
+        256,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/attack_recover/enemy_grunt_attack_recover_01.png",
+      "source_rect": [
+        0,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/hurt/enemy_grunt_hurt_00.png",
+      "source_rect": [
+        64,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/hurt/enemy_grunt_hurt_01.png",
+      "source_rect": [
+        128,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/death/enemy_grunt_death_00.png",
+      "source_rect": [
+        192,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_grunt/death/enemy_grunt_death_01.png",
+      "source_rect": [
+        256,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/idle/enemy_ranged_idle_00.png",
+      "source_rect": [
+        320,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/idle/enemy_ranged_idle_01.png",
+      "source_rect": [
+        384,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/move/enemy_ranged_move_00.png",
+      "source_rect": [
+        448,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/move/enemy_ranged_move_01.png",
+      "source_rect": [
+        512,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_windup/enemy_ranged_attack_windup_00.png",
+      "source_rect": [
+        576,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_windup/enemy_ranged_attack_windup_01.png",
+      "source_rect": [
+        640,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_active/enemy_ranged_attack_active_00.png",
+      "source_rect": [
+        704,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_active/enemy_ranged_attack_active_01.png",
+      "source_rect": [
+        768,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_recover/enemy_ranged_attack_recover_00.png",
+      "source_rect": [
+        832,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/attack_recover/enemy_ranged_attack_recover_01.png",
+      "source_rect": [
+        896,
+        320,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/hurt/enemy_ranged_hurt_00.png",
+      "source_rect": [
+        0,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/hurt/enemy_ranged_hurt_01.png",
+      "source_rect": [
+        64,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/death/enemy_ranged_death_00.png",
+      "source_rect": [
+        128,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_ranged/death/enemy_ranged_death_01.png",
+      "source_rect": [
+        192,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/idle/enemy_elite_idle_00.png",
+      "source_rect": [
+        256,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/idle/enemy_elite_idle_01.png",
+      "source_rect": [
+        320,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/move/enemy_elite_move_00.png",
+      "source_rect": [
+        384,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/move/enemy_elite_move_01.png",
+      "source_rect": [
+        448,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_windup/enemy_elite_attack_windup_00.png",
+      "source_rect": [
+        512,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_windup/enemy_elite_attack_windup_01.png",
+      "source_rect": [
+        576,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_active/enemy_elite_attack_active_00.png",
+      "source_rect": [
+        640,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_active/enemy_elite_attack_active_01.png",
+      "source_rect": [
+        704,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_recover/enemy_elite_attack_recover_00.png",
+      "source_rect": [
+        768,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/attack_recover/enemy_elite_attack_recover_01.png",
+      "source_rect": [
+        832,
+        384,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/hurt/enemy_elite_hurt_00.png",
+      "source_rect": [
+        0,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/hurt/enemy_elite_hurt_01.png",
+      "source_rect": [
+        64,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/death/enemy_elite_death_00.png",
+      "source_rect": [
+        128,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_elite/death/enemy_elite_death_01.png",
+      "source_rect": [
+        256,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/idle/enemy_caster_idle_00.png",
+      "source_rect": [
+        320,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/idle/enemy_caster_idle_01.png",
+      "source_rect": [
+        384,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/move/enemy_caster_move_00.png",
+      "source_rect": [
+        512,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/move/enemy_caster_move_01.png",
+      "source_rect": [
+        576,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_windup/enemy_caster_attack_windup_00.png",
+      "source_rect": [
+        768,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_windup/enemy_caster_attack_windup_01.png",
+      "source_rect": [
+        832,
+        448,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_active/enemy_caster_attack_active_00.png",
+      "source_rect": [
+        0,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_active/enemy_caster_attack_active_01.png",
+      "source_rect": [
+        64,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_recover/enemy_caster_attack_recover_00.png",
+      "source_rect": [
+        128,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/attack_recover/enemy_caster_attack_recover_01.png",
+      "source_rect": [
+        192,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/hurt/enemy_caster_hurt_00.png",
+      "source_rect": [
+        256,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/hurt/enemy_caster_hurt_01.png",
+      "source_rect": [
+        320,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/death/enemy_caster_death_00.png",
+      "source_rect": [
+        384,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "enemy_caster/death/enemy_caster_death_01.png",
+      "source_rect": [
+        448,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "projectiles/idle/projectiles_idle_00.png",
+      "source_rect": [
+        512,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "projectiles/idle/projectiles_idle_01.png",
+      "source_rect": [
+        576,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "fx_combat/idle/fx_combat_idle_00.png",
+      "source_rect": [
+        640,
+        512,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "fx_combat/idle/fx_combat_idle_01.png",
+      "source_rect": [
+        704,
+        512,
+        64,
+        64
+      ]
+    }
+  ]
+}

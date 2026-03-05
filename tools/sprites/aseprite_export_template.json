@@ -1,0 +1,10 @@
+{
+  "naming": "{entity}/{animation}/{entity}_{animation}_{frame}.png",
+  "aseprite_cli_template": "aseprite -b {src_file} --sheet {output_sheet} --data {output_json} --format json-array --sheet-type packed",
+  "placeholders": {
+    "src_file": "path/to/source.aseprite",
+    "output_sheet": "path/to/output_sheet.png",
+    "output_json": "path/to/output_meta.json"
+  },
+  "notes": "Use Aseprite tags for animations; export one .aseprite per entity or folder. Adjust CLI flags to suit Aseprite version."
+}

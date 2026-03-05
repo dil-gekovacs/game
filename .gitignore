@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+frontend/dist/
+*.exe
+*.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+
+# Playwright
+.playwright-mcp/
+test-results/
+playwright-report/
+blob-report/
+e2e/screenshots/
+e2e/test-results/
+
+# Debug screenshots
+screenshots/
+*.png
+!assets/**/*.png
+!frontend/public/**/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go
+/backend/server
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,61 @@
+{
+  "kit_version": 1,
+  "rooms": [
+    {
+      "id": "room-r0-entry",
+      "file": "room-r0-entry.json",
+      "motif": "onboarding ruins",
+      "beat": "learn transition",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r1-fork"]
+    },
+    {
+      "id": "room-r1-fork",
+      "file": "room-r1-fork.json",
+      "motif": "split lanes",
+      "beat": "split/regroup",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r2-switch-gallery"]
+    },
+    {
+      "id": "room-r2-switch-gallery",
+      "file": "room-r2-switch-gallery.json",
+      "motif": "timed corridor",
+      "beat": "triggered wave",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r3-crossfire"]
+    },
+    {
+      "id": "room-r3-crossfire",
+      "file": "room-r3-crossfire.json",
+      "motif": "cover arena",
+      "beat": "crossfire dodge",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r4-lock-key"]
+    },
+    {
+      "id": "room-r4-lock-key",
+      "file": "room-r4-lock-key.json",
+      "motif": "detour key loop",
+      "beat": "backtrack unlock",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r5-mini-boss"]
+    },
+    {
+      "id": "room-r5-mini-boss",
+      "file": "room-r5-mini-boss.json",
+      "motif": "boss court",
+      "beat": "hp-threshold adds",
+      "default_spawn": "player_spawn_west",
+      "next": ["room-r6-sanctuary"]
+    },
+    {
+      "id": "room-r6-sanctuary",
+      "file": "room-r6-sanctuary.json",
+      "motif": "reward sanctuary",
+      "beat": "checkpoint and branch",
+      "default_spawn": "player_spawn_west",
+      "next": []
+    }
+  ]
+}
