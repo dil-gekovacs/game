@@ -37,7 +37,9 @@ const (
 
 	PlayerStateDead      uint8  = 5
 	PlayerStateAttacking uint8  = 2
-	PlayerRespawnTicks   uint16 = 90 // 3 seconds at 30Hz
+	PlayerRespawnTicks   uint16 = 90  // 3 seconds at 30Hz
+	PlayerRegenRate      uint8  = 2   // HP recovered per regen tick
+	PlayerRegenInterval  uint8  = 60  // ticks between regen (2 seconds at 30Hz)
 
 	eventTypeDamage        uint8 = 0
 	eventTypeEntityDespawn uint8 = 5
@@ -91,6 +93,7 @@ type Player struct {
 	LatestInput              PlayerInput
 	PrimaryCooldownRemaining uint8
 	RespawnTimer             uint16
+	RegenCounter             uint8
 }
 
 type Enemy struct {
@@ -424,6 +427,21 @@ func (r *Room) simulateTick() {
 			r.applyPrimaryAttackLocked(player, &events)
 			player.PrimaryCooldownRemaining = PrimaryAttackCooldownTicks
 			player.State = PlayerStateAttacking
+		}
+
+		// Slow health regeneration
+		if player.HP > 0 && player.HP < player.MaxHP {
+			player.RegenCounter++
+			if player.RegenCounter >= PlayerRegenInterval {
+				player.RegenCounter = 0
+				newHP := player.HP + PlayerRegenRate
+				if newHP > player.MaxHP {
+					newHP = player.MaxHP
+				}
+				player.HP = newHP
+			}
+		} else {
+			player.RegenCounter = 0
 		}
 	}
 
