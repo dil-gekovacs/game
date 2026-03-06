@@ -60,6 +60,11 @@ const resolveConnectionConfig = (): ConnectionConfig => {
 
 const startGame = async () => {
   const connectionConfig = resolveConnectionConfig();
+
+  // Use nearest-neighbor filtering for crisp pixel art at any zoom level
+  const { TextureSource } = await import("pixi.js");
+  TextureSource.defaultOptions.scaleMode = "nearest";
+
   const app = new Application();
   await app.init({
     antialias: false,
